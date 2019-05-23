@@ -3,8 +3,9 @@
     <title>Video stream sample</title>
   </head>
   <body>
-    <video id="videoPlayer" controls muted="muted" autoplay> 
-      <source src="http://localhost:3000/video" type="video/mp4">
+    <video id="videoPlayer" width="800" height="640" controls="true" muted="muted" autoplay playsinline> 
+      <!--source src="http://localhost:3000/video" type="video/mp4"-->
+      <source src="http://192.168.2.113:3000/video" type="video/mp4">
     </video>
   </body>
 </html>
