@@ -14,7 +14,8 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.get('/', function(req, res) {
   //res.sendFile(path.join(__dirname + '/index.htm'))
-  res.render(path.join(__dirname + '/index.htm'))
+  var host = ip.address()
+  res.render(path.join(__dirname + '/index.htm'), {host:host})
 })
 
 app.get('/dev', function (req, res) {

@@ -2,10 +2,21 @@
   <head>
     <title>Video stream sample</title>
   </head>
-  <body>
+  <body>      
     <video id="videoPlayer" width="800" height="640" controls="true" muted="muted" autoplay playsinline> 
       <!--source src="http://localhost:3000/video" type="video/mp4"-->
-      <source src="http://192.168.2.113:3000/video" type="video/mp4">
+      <!--source src="http://192.168.2.113:3000/video" type="video/mp4"-->
     </video>
+    <script>
+      var video = document.getElementById('videoPlayer');
+      var source = document.createElement('source');
+      var host = "<%= host %>";
+      console.log(host);
+      source.setAttribute('src', 'http://'+host+':3000/video');
+      source.setAttribute('type', 'video/mp4');
+      video.appendChild(source);
+      video.play();
+    </script>    
+
   </body>
 </html>
